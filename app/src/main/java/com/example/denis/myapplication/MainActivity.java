@@ -50,17 +50,22 @@ public class MainActivity extends AppCompatActivity {
         final TextView tv_core2 = (TextView) findViewById(R.id.core2freq);
         final TextView tv_core3 = (TextView) findViewById(R.id.core3freq);
         final TextView tv_maxFreq = (TextView) findViewById(R.id.tv_maxFreq);
-        final TextView tv_cpu2file = (TextView) findViewById(R.id.tv_cpu2file);
+        //final TextView tv_cpu2file = (TextView) findViewById(R.id.tv_cpu2file);
         final TextView tv_cputemp = (TextView) findViewById(R.id.tv_cputemp);
 
-        tv_maxFreq.setText(ReadCPU0(maxFreq));
+
+
 
         final File cpu0file = new File("/sys/devices/system/cpu/cpu0/cpufreq/scaling_cur_freq");
         final File cpu1file = new File("/sys/devices/system/cpu/cpu1/cpufreq/scaling_cur_freq");
         final File cpu2file = new File("/sys/devices/system/cpu/cpu2/cpufreq/scaling_cur_freq");
         final File cpu3file = new File("/sys/devices/system/cpu/cpu3/cpufreq/scaling_cur_freq");
         final File cputempfile = new File("sys/class/thermal/thermal_zone0/temp");
+        final File maxcpufreqfile = new File("/sys/devices/system/cpu/cpu3/cpufreq/cpuinfo_max_freq");
 
+        if (maxcpufreqfile.exists()) {
+            tv_maxFreq.setText(formatCPUFreq(ReadCPU0(maxFreq)) + " Mhz");
+        } else tv_maxFreq.setText("N/A");
 
         Thread thread = new Thread() {
             @Override
@@ -99,14 +104,14 @@ public class MainActivity extends AppCompatActivity {
                                 }
 
                                 if (cputempfile.exists()) {
-                                    tv_cputemp.setText(ReadCPU0(cputemp) + "°C");
+                                    tv_cputemp.setText(ReadCPU0(cputemp));
                                 } else {
                                     tv_cputemp.setText("N/A");
                                 }
 
-                                tv_cpu2file.setText(ReadCPU0(temp));
-                                System.out.println("Battery " + ReadCPU0(batterytemp));
-                                System.out.println("Thermal " + ReadCPU0(thermal));
+                                //tv_cpu2file.setText(ReadCPU0(temp));
+                                //System.out.println("Battery " + ReadCPU0(batterytemp));
+                                //System.out.println("Thermal " + ReadCPU0(thermal));
 
                             }
                         });
@@ -176,6 +181,11 @@ public class MainActivity extends AppCompatActivity {
     protected void onStop() {
         super.onStop();
         //keepReading = false;      //don't disable otherwise stops reading after going to sleep
+    }
+
+    protected void onResume() {
+        super.onResume();
+        keepReading = true;
     }
 
 
