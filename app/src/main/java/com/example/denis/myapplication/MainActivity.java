@@ -33,6 +33,10 @@ public class MainActivity extends AppCompatActivity {
 
     String pattern = "([0-9]{6,7})";
     Pattern pat = Pattern.compile(pattern);
+    String patter2 = "([0-9]{1,2})";
+    Pattern pat2 = Pattern.compile(patter2);
+
+    int foo = 0;
 
 
     @Override
@@ -113,6 +117,23 @@ public class MainActivity extends AppCompatActivity {
                                 //System.out.println("Battery " + ReadCPU0(batterytemp));
                                 //System.out.println("Thermal " + ReadCPU0(thermal));
 
+                                foo = Integer.parseInt(formatTemp(ReadCPU0(cputemp)));
+                                //System.out.println(formatTemp(ReadCPU0(cputemp)));
+                                //System.out.println("foo is " + foo);
+                                if (foo < 40) {
+                                    tv_cputemp.setTextColor(getResources().getColor(R.color.Blue));
+                                }
+
+                                if (foo > 40 && foo < 50) {
+                                    tv_cputemp.setTextColor(getResources().getColor(R.color.Yellow));
+                                }
+                                if (foo > 50 && foo < 60) {
+                                    tv_cputemp.setTextColor(getResources().getColor(R.color.Brown));
+                                }
+                                if (foo > 60) {
+                                    tv_cputemp.setTextColor(getResources().getColor(R.color.Red));
+                                }
+
                             }
                         });
                     }
@@ -156,6 +177,16 @@ public class MainActivity extends AppCompatActivity {
             uwot = m.group(0);
             return uwot.substring(0, uwot.length() - 3);
         } else return "Error";
+    }
+
+    private String formatTemp (String cpuFreq) {
+
+        String uwot = "";
+        Matcher m = pat2.matcher(cpuFreq);
+        if (m.find()) {
+            uwot = m.group(0);
+            return uwot.substring(0, uwot.length() - 0);
+        } else return "0";
     }
 
     private SensorEventListener temperatureSensor = new SensorEventListener() {

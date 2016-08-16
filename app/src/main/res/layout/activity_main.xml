@@ -23,7 +23,7 @@
             android:layout_height="wrap_content"
             android:text="N/A"
             android:id="@+id/core0freq"
-            android:textColor="#ffffff"
+            android:textColor="@color/Purple"
             android:layout_above="@+id/core1freq"
             android:layout_alignParentEnd="true"
             android:textSize="20dp"
@@ -36,7 +36,7 @@
             android:id="@+id/core0label"
             android:layout_alignParentTop="true"
             android:layout_alignParentStart="true"
-            android:textColor="#ffffff"
+            android:textColor="@color/Purple"
             android:textSize="20dp" />
 
         <TextView
@@ -46,7 +46,7 @@
             android:id="@+id/core1label"
             android:layout_below="@+id/core0label"
             android:layout_alignParentStart="true"
-            android:textColor="#ffffff"
+            android:textColor="@color/PineGreen"
             android:textSize="20dp" />
 
         <TextView
@@ -56,7 +56,7 @@
             android:id="@+id/core2label"
             android:layout_below="@+id/core1label"
             android:layout_alignParentStart="true"
-            android:textColor="#ffffff"
+            android:textColor="@color/Red"
             android:textSize="20dp" />
 
         <TextView
@@ -66,7 +66,7 @@
             android:id="@+id/core3label"
             android:layout_below="@+id/core2label"
             android:layout_alignParentStart="true"
-            android:textColor="#ffffff"
+            android:textColor="@color/PaleGreen"
             android:textSize="20dp" />
 
         <TextView
@@ -76,7 +76,7 @@
             android:id="@+id/core1freq"
             android:layout_alignTop="@+id/core1label"
             android:layout_alignStart="@+id/core0freq"
-            android:textColor="#ffffff"
+            android:textColor="@color/PineGreen"
             android:textSize="20dp"
             android:textAlignment="textEnd" />
 
@@ -87,7 +87,7 @@
             android:id="@+id/core2freq"
             android:layout_below="@+id/core1freq"
             android:layout_alignStart="@+id/core1freq"
-            android:textColor="#ffffff"
+            android:textColor="@color/Red"
             android:textSize="20dp"
             android:textAlignment="textEnd" />
 
@@ -98,7 +98,7 @@
             android:id="@+id/core3freq"
             android:layout_below="@+id/core2freq"
             android:layout_alignStart="@+id/core2freq"
-            android:textColor="#ffffff"
+            android:textColor="@color/PaleGreen"
             android:textSize="20dp"
             android:textAlignment="textEnd" />
 
@@ -115,10 +115,10 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="CPU Max Frequency"
+            android:text="CPU Max Frequency:"
             android:id="@+id/cpuMaxFreq"
             android:layout_marginTop="26dp"
-            android:textColor="#ffffff"
+            android:textColor="@color/Brown"
             android:layout_alignParentStart="true"
             android:textSize="20dp" />
 
@@ -127,7 +127,7 @@
             android:layout_height="wrap_content"
             android:text="maxFreq"
             android:id="@+id/tv_maxFreq"
-            android:textColor="#ffffff"
+            android:textColor="@color/Brown"
             android:layout_alignTop="@+id/cpuMaxFreq"
             android:layout_alignParentEnd="true"
             android:textSize="20dp" />
@@ -147,7 +147,7 @@
             android:layout_height="150dp"
             android:text="N/A"
             android:id="@+id/tv_cputemp"
-            android:textColor="#ffffff"
+            android:textColor="@color/Text"
             android:textSize="120sp"
             android:layout_centerHorizontal="true"
             android:textAlignment="center" />
@@ -157,14 +157,33 @@
             android:layout_height="wrap_content"
             android:text="CPU Temperature (°C)"
             android:id="@+id/tv_cputemplabel"
-            android:textColor="#ffffff"
+            android:textColor="@color/Violet"
             android:textSize="20dp"
             android:layout_marginTop="180dp"
             android:layout_centerHorizontal="true" />
 
     </RelativeLayout>
 
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@id/maxFreq"
+        android:layout_marginTop="21dp"
+        android:background="@color/LineBreak"/>
 
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@id/cpuTempLayout"
+        android:layout_marginTop="60dp"
+        android:background="@color/LineBreak"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@id/freqLayout"
+        android:layout_marginTop="21dp"
+        android:background="@color/LineBreak"/>
 
 
 </RelativeLayout>
