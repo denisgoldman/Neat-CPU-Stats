@@ -108,7 +108,8 @@ public class MainActivity extends AppCompatActivity {
                                 }
 
                                 if (cputempfile.exists()) {
-                                    tv_cputemp.setText(ReadCPU0(cputemp));
+                                    //tv_cputemp.setText(ReadCPU0(cputemp));
+                                    tv_cputemp.setText(formatTemp(ReadCPU0(cputemp)));
                                 } else {
                                     tv_cputemp.setText("N/A");
                                 }
