@@ -22,7 +22,11 @@ public class MainActivity extends AppCompatActivity {
     String[] cpu1 = {"/system/bin/cat", "/sys/devices/system/cpu/cpu1/cpufreq/scaling_cur_freq"};
     String[] cpu2 = {"/system/bin/cat", "/sys/devices/system/cpu/cpu2/cpufreq/scaling_cur_freq"};
     String[] cpu3 = {"/system/bin/cat", "/sys/devices/system/cpu/cpu3/cpufreq/scaling_cur_freq"};
-    String[] maxFreq = {"/system/bin/cat", "/sys/devices/system/cpu/cpu3/cpufreq/cpuinfo_max_freq"};
+    String[] cpu4 = {"/system/bin/cat", "/sys/devices/system/cpu/cpu4/cpufreq/scaling_cur_freq"};
+    String[] cpu5 = {"/system/bin/cat", "/sys/devices/system/cpu/cpu5/cpufreq/scaling_cur_freq"};
+    String[] cpu6 = {"/system/bin/cat", "/sys/devices/system/cpu/cpu6/cpufreq/scaling_cur_freq"};
+    String[] cpu7 = {"/system/bin/cat", "/sys/devices/system/cpu/cpu7/cpufreq/scaling_cur_freq"};
+    String[] maxFreq = {"/system/bin/cat", "/sys/devices/system/cpu/cpu4/cpufreq/cpuinfo_max_freq"};
     //String[] temp = {"/system/bin/cat", "sys/class/hwmon/hwmonX/temp1_input"};
     String[] temp = {"/system/bin/cat", "sys/devices/virtual/thermal/thermal1_zone0/temp"};
     String[] batterytemp = {"/system/bin/cat", "/sys/class/power_supply/battery/temp"};
@@ -64,8 +68,13 @@ public class MainActivity extends AppCompatActivity {
         final File cpu1file = new File("/sys/devices/system/cpu/cpu1/cpufreq/scaling_cur_freq");
         final File cpu2file = new File("/sys/devices/system/cpu/cpu2/cpufreq/scaling_cur_freq");
         final File cpu3file = new File("/sys/devices/system/cpu/cpu3/cpufreq/scaling_cur_freq");
+        final File cpu4file = new File("/sys/devices/system/cpu/cpu4/cpufreq/scaling_cur_freq");
+        final File cpu5file = new File("/sys/devices/system/cpu/cpu5/cpufreq/scaling_cur_freq");
+        final File cpu6file = new File("/sys/devices/system/cpu/cpu6/cpufreq/scaling_cur_freq");
+        final File cpu7file = new File("/sys/devices/system/cpu/cpu7/cpufreq/scaling_cur_freq");
+
         final File cputempfile = new File("sys/class/thermal/thermal_zone0/temp");
-        final File maxcpufreqfile = new File("/sys/devices/system/cpu/cpu3/cpufreq/cpuinfo_max_freq");
+        final File maxcpufreqfile = new File("/sys/devices/system/cpu/cpu4/cpufreq/cpuinfo_max_freq");
 
         if (maxcpufreqfile.exists()) {
             tv_maxFreq.setText(formatCPUFreq(ReadCPU0(maxFreq)) + " Mhz");
@@ -105,6 +114,38 @@ public class MainActivity extends AppCompatActivity {
                                     tv_core3.setText(formatCPUFreq(ReadCPU0(cpu3))+ " MHz");
                                 } else {
                                     tv_core3.setText("Offline");
+                                }
+
+                                if (cpu4file.exists()) {
+                                    //tv_core3.setText(formatCPUFreq(ReadCPU0(cpu3))+ " MHz");
+                                    System.out.println("CPU 4: " + formatCPUFreq(ReadCPU0(cpu4)) + " MHz");
+                                } else {
+                                    //tv_core3.setText("Offline");
+                                    System.out.println("CPU 4: " + formatCPUFreq(ReadCPU0(cpu4)) + " MHz");
+                                }
+
+                                if (cpu5file.exists()) {
+                                    //tv_core3.setText(formatCPUFreq(ReadCPU0(cpu3))+ " MHz");
+                                    System.out.println("CPU 5: " + formatCPUFreq(ReadCPU0(cpu5)) + " MHz");
+                                } else {
+                                    //tv_core3.setText("Offline");
+                                    System.out.println("CPU 5: " + formatCPUFreq(ReadCPU0(cpu5)) + " MHz");
+                                }
+
+                                if (cpu6file.exists()) {
+                                    //tv_core3.setText(formatCPUFreq(ReadCPU0(cpu3))+ " MHz");
+                                    System.out.println("CPU 6: " + formatCPUFreq(ReadCPU0(cpu6)) + " MHz");
+                                } else {
+                                    //tv_core3.setText("Offline");
+                                    System.out.println("CPU 6: " + formatCPUFreq(ReadCPU0(cpu6)) + " MHz");
+                                }
+
+                                if (cpu7file.exists()) {
+                                    //tv_core3.setText(formatCPUFreq(ReadCPU0(cpu3))+ " MHz");
+                                    System.out.println("CPU 7: " + formatCPUFreq(ReadCPU0(cpu7)) + " MHz");
+                                } else {
+                                    //tv_core3.setText("Offline");
+                                    System.out.println("CPU 7: " + formatCPUFreq(ReadCPU0(cpu7)) + " MHz");
                                 }
 
                                 if (cputempfile.exists()) {
