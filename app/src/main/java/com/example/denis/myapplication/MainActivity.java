@@ -57,6 +57,10 @@ public class MainActivity extends AppCompatActivity {
         final TextView tv_core1 = (TextView) findViewById(R.id.core1freq);
         final TextView tv_core2 = (TextView) findViewById(R.id.core2freq);
         final TextView tv_core3 = (TextView) findViewById(R.id.core3freq);
+        final TextView tv_core4 = (TextView) findViewById(R.id.core4freq);
+        final TextView tv_core5 = (TextView) findViewById(R.id.core5freq);
+        final TextView tv_core6 = (TextView) findViewById(R.id.core6freq);
+        final TextView tv_core7 = (TextView) findViewById(R.id.core7freq);
         final TextView tv_maxFreq = (TextView) findViewById(R.id.tv_maxFreq);
         //final TextView tv_cpu2file = (TextView) findViewById(R.id.tv_cpu2file);
         final TextView tv_cputemp = (TextView) findViewById(R.id.tv_cputemp);
@@ -117,35 +121,35 @@ public class MainActivity extends AppCompatActivity {
                                 }
 
                                 if (cpu4file.exists()) {
-                                    //tv_core3.setText(formatCPUFreq(ReadCPU0(cpu3))+ " MHz");
-                                    System.out.println("CPU 4: " + formatCPUFreq(ReadCPU0(cpu4)) + " MHz");
+                                    tv_core4.setText(formatCPUFreq(ReadCPU0(cpu4))+ " MHz");
+                                    //System.out.println("CPU 4: " + formatCPUFreq(ReadCPU0(cpu4)) + " MHz");
                                 } else {
-                                    //tv_core3.setText("Offline");
-                                    System.out.println("CPU 4: " + formatCPUFreq(ReadCPU0(cpu4)) + " MHz");
+                                    tv_core4.setText("Offline");
+                                    //System.out.println("CPU 4: " + formatCPUFreq(ReadCPU0(cpu4)) + " MHz");
                                 }
 
                                 if (cpu5file.exists()) {
-                                    //tv_core3.setText(formatCPUFreq(ReadCPU0(cpu3))+ " MHz");
-                                    System.out.println("CPU 5: " + formatCPUFreq(ReadCPU0(cpu5)) + " MHz");
+                                    tv_core5.setText(formatCPUFreq(ReadCPU0(cpu5))+ " MHz");
+                                    //System.out.println("CPU 5: " + formatCPUFreq(ReadCPU0(cpu5)) + " MHz");
                                 } else {
-                                    //tv_core3.setText("Offline");
-                                    System.out.println("CPU 5: " + formatCPUFreq(ReadCPU0(cpu5)) + " MHz");
+                                    tv_core5.setText("Offline");
+                                    //System.out.println("CPU 5: " + formatCPUFreq(ReadCPU0(cpu5)) + " MHz");
                                 }
 
                                 if (cpu6file.exists()) {
-                                    //tv_core3.setText(formatCPUFreq(ReadCPU0(cpu3))+ " MHz");
-                                    System.out.println("CPU 6: " + formatCPUFreq(ReadCPU0(cpu6)) + " MHz");
+                                    tv_core6.setText(formatCPUFreq(ReadCPU0(cpu6))+ " MHz");
+                                    //System.out.println("CPU 6: " + formatCPUFreq(ReadCPU0(cpu6)) + " MHz");
                                 } else {
-                                    //tv_core3.setText("Offline");
-                                    System.out.println("CPU 6: " + formatCPUFreq(ReadCPU0(cpu6)) + " MHz");
+                                    tv_core6.setText("Offline");
+                                    //System.out.println("CPU 6: " + formatCPUFreq(ReadCPU0(cpu6)) + " MHz");
                                 }
 
                                 if (cpu7file.exists()) {
-                                    //tv_core3.setText(formatCPUFreq(ReadCPU0(cpu3))+ " MHz");
-                                    System.out.println("CPU 7: " + formatCPUFreq(ReadCPU0(cpu7)) + " MHz");
+                                    tv_core7.setText(formatCPUFreq(ReadCPU0(cpu7))+ " MHz");
+                                    //System.out.println("CPU 7: " + formatCPUFreq(ReadCPU0(cpu7)) + " MHz");
                                 } else {
-                                    //tv_core3.setText("Offline");
-                                    System.out.println("CPU 7: " + formatCPUFreq(ReadCPU0(cpu7)) + " MHz");
+                                    tv_core7.setText("Offline");
+                                    //System.out.println("CPU 7: " + formatCPUFreq(ReadCPU0(cpu7)) + " MHz");
                                 }
 
                                 if (cputempfile.exists()) {

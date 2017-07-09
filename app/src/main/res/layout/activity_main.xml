@@ -70,6 +70,46 @@
             android:textSize="20dp" />
 
         <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Core 5:"
+            android:id="@+id/core4label"
+            android:layout_below="@+id/core3label"
+            android:layout_alignParentStart="true"
+            android:textColor="@color/Violet"
+            android:textSize="20dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Core 6:"
+            android:id="@+id/core5label"
+            android:layout_below="@+id/core4label"
+            android:layout_alignParentStart="true"
+            android:textColor="@color/Yellow"
+            android:textSize="20dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Core 7:"
+            android:id="@+id/core6label"
+            android:layout_below="@+id/core5label"
+            android:layout_alignParentStart="true"
+            android:textColor="@color/Text"
+            android:textSize="20dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Core 8:"
+            android:id="@+id/core7label"
+            android:layout_below="@+id/core6label"
+            android:layout_alignParentStart="true"
+            android:textColor="@color/BrightGreen"
+            android:textSize="20dp" />
+
+        <TextView
             android:layout_width="100dp"
             android:layout_height="wrap_content"
             android:text="N/A"
@@ -96,11 +136,55 @@
             android:layout_height="wrap_content"
             android:text="N/A"
             android:id="@+id/core3freq"
-            android:layout_below="@+id/core2freq"
-            android:layout_alignStart="@+id/core2freq"
             android:textColor="@color/PaleGreen"
             android:textSize="20dp"
-            android:textAlignment="textEnd" />
+            android:textAlignment="textEnd"
+            android:layout_below="@+id/core2freq"
+            android:layout_alignParentEnd="true" />
+
+        <TextView
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:text="N/A"
+            android:id="@+id/core4freq"
+            android:textColor="@color/Violet"
+            android:textSize="20dp"
+            android:textAlignment="textEnd"
+            android:layout_below="@+id/core3freq"
+            android:layout_alignParentEnd="true" />
+
+        <TextView
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:text="N/A"
+            android:id="@+id/core5freq"
+            android:textColor="@color/Yellow"
+            android:textSize="20dp"
+            android:textAlignment="textEnd"
+            android:layout_below="@+id/core4freq"
+            android:layout_alignParentEnd="true" />
+
+        <TextView
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:text="N/A"
+            android:id="@+id/core6freq"
+            android:textColor="@color/Text"
+            android:textSize="20dp"
+            android:textAlignment="textEnd"
+            android:layout_below="@+id/core5freq"
+            android:layout_alignParentEnd="true" />
+
+        <TextView
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:text="N/A"
+            android:id="@+id/core7freq"
+            android:textColor="@color/BrightGreen"
+            android:textSize="20dp"
+            android:textAlignment="textEnd"
+            android:layout_below="@+id/core6freq"
+            android:layout_alignParentEnd="true" />
 
     </RelativeLayout>
 
