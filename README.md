@@ -4,4 +4,4 @@ Native Android application for displaying CPU temperature, maximum CPU frequency
 
 ### Screenshot
 
-![Neat CPU Stats](https://i.imgur.com/xvEpPaC.png)
+<img src="http://i.imgur.com/eEkD9ES.jpg" width="300">
